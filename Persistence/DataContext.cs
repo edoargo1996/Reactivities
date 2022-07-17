@@ -1,5 +1,5 @@
 using Domain;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;        //EntityFramework permette di scrivere codice in c# e popolare il database in automatico usando le migrations
 
 namespace Persistence
 {
