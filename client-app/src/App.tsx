@@ -18,7 +18,7 @@ function App() {                                        //quello che vediamo qui
         <div>
             <Header as='h2' icon='users' content='reactivities'/>
             <List>
-            {activities.map((activity:any) =>(      //stiamo applicando una funzione ad ogni activity dentro l'array activities
+            {activities.map((activity:any) =>(          //stiamo applicando una funzione ad ogni activity dentro l'array activities
                 <List.Item key={activity.id}>
                     {activity.title}
                 </List.Item>
