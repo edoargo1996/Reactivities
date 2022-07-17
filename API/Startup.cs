@@ -29,7 +29,7 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -39,7 +39,13 @@ namespace API
             {
                 opt.UseSqlite(_config.GetConnectionString("DefaultConnection"));
             });
-
+            services.AddCors(opt=>
+            {
+                opt.AddPolicy("CorsPolicy", policy=>
+                {
+                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");     //stiamo permettendo che sul sito nostro tutti i metodi e gli header che vengono dalla porta 3000 siano utilizzabili
+                });
+            });
             
         }
 
@@ -56,6 +62,8 @@ namespace API
             //app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 

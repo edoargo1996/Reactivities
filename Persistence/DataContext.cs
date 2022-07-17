@@ -12,4 +12,4 @@ namespace Persistence
         public DbSet<Activity> Activities { get; set; }     //Quando creiamo un oggetto Activity viene automaticamente registrato nel database con cio' che e' stato definito nella classe Activity nel Domain, e' una tabella nel DataBase
 
     }
-}
+}       
